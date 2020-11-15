@@ -1,0 +1,40 @@
+<LINK REL=StyleSheet HREF="index.css" TYPE="text/css" MEDIA=screen>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="./login.js"></script>
+<html lang="en">
+<head>
+</head>
+
+  <body>
+    <div id="status"></div>
+    <fb:login-button
+    scope="public_profile,email"
+    onlogin="checkLoginState();">
+  </fb:login-button>
+
+  <div onclick="logout()" style="color:BLUE; cursor:pointer;">Log out</div>
+block the submit button until both fields are filled
+  Please log in
+
+  <br/><br/>
+
+
+  <form method = "post" action="./thankyou.html">
+    <label for="fname">What college did you attend?</label>
+    <input type="text" id="college" name="college"><br/><br/>
+    <label for="lname">What was your area of study?</label>
+    <input type="text" id="area-of-study"><br/><br/>
+    <label for="stuff">Did your degree lead to a significant improvement in your household income?</label>
+    <select id="question">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+  </form>
+
+
+  <button onclick="submit()">Submit</button>
+
+
+</body>
+</html>
