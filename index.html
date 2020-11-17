@@ -9,31 +9,34 @@
   <body>
     <div id="status"></div>
     <fb:login-button
+    class="fb-button"
     scope="public_profile,email"
-    onlogin="checkLoginState();">
+    onlogin="checkLoginState();"
+    >
   </fb:login-button>
 
   <div onclick="logout()" style="color:BLUE; cursor:pointer;">Log out</div>
-block the submit button until both fields are filled
-  Please log in
+  Please log in to Facebook. <br/>
+  <i style="font-size: 10px"> Facebook login is only used to ensure that there are not multiple votes from one person </i>
 
   <br/><br/>
 
 
-  <form method = "post" action="./thankyou.html">
-    <label for="fname">What college did you attend?</label>
+  <form method = "post">
+    <label for="fname">What college did you attend?</label><br/>
     <input type="text" id="college" name="college"><br/><br/>
-    <label for="lname">What was your area of study?</label>
+    <label for="lname">What was your area of study?</label><br/>
     <input type="text" id="area-of-study"><br/><br/>
-    <label for="stuff">Did your degree lead to a significant improvement in your household income?</label>
+    <label for="stuff">Did your degree lead to a significant improvement in your household income?</label><br/>
     <select id="question">
+      <option></option>
       <option value="yes">Yes</option>
       <option value="no">No</option>
     </select>
   </form>
 
 
-  <button onclick="submit()">Submit</button>
+<button onclick="submit()" id="submit" disabled="disabled">Submit</button>
 
 
 </body>

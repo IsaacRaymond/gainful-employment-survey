@@ -1,5 +1,6 @@
 let facebookId;
 
+
 $(document).ready(function() {
   var request = new XMLHttpRequest();
   var request2 = new XMLHttpRequest();
@@ -21,7 +22,6 @@ $(document).ready(function() {
   for (var i = 0; i < jsonObject2.length; i++) {
     majors.push(jsonObject2[i]);
   }
-  console.log(majors);
   // Retrived data from csv file content
 
   $( "#college" ).autocomplete({
@@ -34,6 +34,7 @@ $(document).ready(function() {
       event.currentTarget.focus();
     }
 }
+
   });
 
   $( "#area-of-study" ).autocomplete({
@@ -47,6 +48,9 @@ $(document).ready(function() {
     }
 }
   })
+
+  checkInputs();
+
 });
 
 
@@ -103,6 +107,7 @@ function logout(){
   });
 }
 
+/*
 function loginCheck(id){
       $.post('/',
       {
@@ -117,6 +122,7 @@ function loginCheck(id){
       })
       //window.location.href = "./class/select/select.html";
 }
+*/
 
 
 function submit(){
@@ -150,4 +156,23 @@ function setId(id){
 
 function getId(){
   return facebookId;
+}
+
+
+function checkInputs(){
+  let college, areaOfStudy, question;
+
+  var form = document.querySelector('form');
+form.addEventListener('change', function() {
+
+  college = $('#college').val();
+  areaOfStudy = $('#area-of-study').val();
+  question = $('#question').find(":selected").text();
+
+  if (college && areaOfStudy && question){
+    $('#submit').attr("disabled", false);
+  } else {
+    $('#submit').attr("disabled", true);
+  }
+  });
 }
