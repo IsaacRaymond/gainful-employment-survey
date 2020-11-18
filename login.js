@@ -88,7 +88,7 @@ function statusChangeCallback(response) {
   if (response.status === 'connected') {
     FB.api('/me', function (response) {
       document.getElementById('status').innerHTML =
-      'Thanks for logging in, ' + response.id + '!';
+      'Thanks for logging in!';
       setId(response.id);
     });
   } else {
@@ -175,4 +175,12 @@ form.addEventListener('change', function() {
     $('#submit').attr("disabled", true);
   }
   });
+}
+
+function clearCollege(){
+  $("#college").val('');
+}
+
+function clearAreaOfStudy(){
+  $("#area-of-study").val('');
 }

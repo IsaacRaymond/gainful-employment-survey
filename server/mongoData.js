@@ -14,6 +14,7 @@ function mongoDbConnect(college, areaOfStudy, res){
     }
 
     console.log(responseData);
+    console.log(process.env.USERID);
 
     var database = client.db("survey");
     var resultsCollection = database.collection("results");
