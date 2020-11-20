@@ -10,48 +10,15 @@
 </head>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <body>
+    <div class="center-class">
       Please log in to Facebook. <br/>
-        <i style="font-size: 10px"> Facebook login is only used to ensure that there are not multiple votes from one person </i>
+        <i style="font-size: 10px"> Facebook login is only used to ensure that a person cannot respond multiple times </i>
     <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0&appId=723133751859399&autoLogAppEvents=1" nonce="tEeahF1D"></script>
     <div id="status"></div>
-
-    <!--
-    <fb:login-button
-    data-size="large"
-    class="fb-button"
-    scope="public_profile,email"
-    onlogin="checkLoginState();"
-    >
-    </fb:login-button>
--->
 <div class="fb-login-button" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" data-width="" scope="public_profile,email" onlogin="checkLoginState()"></div>
   <div onclick="logout()" style="color:BLUE; cursor:pointer;font-size: 15px;">Log out</div>
-
-  <br/><br/>
-  <div class="w3-card-4">
-      <div class="w3-container w3-teal">
-        <h2>Gainful Employment Survey</h2>
-      </div>
-  <form method = "post">
-    <label class="w3-text-teal" for="fname">What college did you attend?</label><br/>
-    <input class="w3-input w3-border w3-light-grey" type="text" id="college" name="college"><br/>
-    <label class="clear" onclick="clearCollege()"> clear </label><br/><br/>
-    <label class="w3-text-blue" for="lname">What was your area of study?</label><br/>
-    <input class="w3-input w3-border w3-sand" type="text" id="area-of-study"><br/>
-    <label class = "clear" onclick="clearAreaOfStudy()"> clear </label><br/><br/>
-    <label class="w3-text-blue" for="stuff">Did your degree lead to a significant improvement in your household income?</label><br/>
-    <select id="question" class="w3-input w3-border w3-sand">
-      <option></option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-    </select>
-  </form>
-  </div>
-
-
-<button class="w3-btn w3-brown" onclick="submit()" id="submit" disabled="disabled">Submit</button>
-
+    </div>
 
 </body>
 </html>

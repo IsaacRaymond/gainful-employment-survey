@@ -1,5 +1,6 @@
 body {
   font-size: 25px;
+  text-align: center;
 }
 
 input {
@@ -29,23 +30,10 @@ button:hover{
   color: black;
 }
 
-.center-class{
-  border-radius:  100px;
-  width:  600px;
-  margin: 8% auto;
-  position: relative;
-  background-color:  #FFF;
-  text-align:  center;
-  padding:  40px 40px;
-}
-
-.clear{
-  width: 100px;
-  font-size: 15px;
-  padding: 5px;
-  border-radius: 7px;
-  background-color: #F0F0F0;
-  cursor: pointer;
+.center{
+  width: 80%;
+  margin: auto;
+  padding: 10px;
 }
 
 .fb-button{
@@ -87,6 +75,13 @@ button:hover{
     background:#96B202;
     outline:none;
 }
+
+#submit{
+  width: 100px;
+  cursor: pointer;
+  margin: auto;
+}
+
 /*
 
 .ui-autocomplete:hover{
@@ -130,8 +125,3 @@ button:hover{
   display: none;
 }
 */
-
-
-#big{
-  width: 100px;
-}

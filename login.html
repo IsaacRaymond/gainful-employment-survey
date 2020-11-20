@@ -1,0 +1,40 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<LINK REL=StyleSheet HREF="login.css" TYPE="text/css" MEDIA=screen>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="./main.js"></script>
+<html lang="en">
+<head>
+</head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <body>
+
+  <br/><br/>
+  <div class="w3-card-4 center">
+      <div class="w3-container w3-teal">
+        <h2>Gainful Employment Survey</h2>
+      </div>
+  <form method = "post">
+    <label class="w3-text-teal" for="fname">What college did you attend?</label><br/>
+    <input class="w3-input w3-border w3-light-grey" type="text" id="college" name="college"><br/>
+    <!-- <label class="clear" onclick="clearCollege()"> clear </label><br/><br/> -->
+    <label class="w3-text-teal" for="lname">What was your area of study?</label><br/>
+    <input class="w3-input w3-border w3-light-grey" type="text" id="area-of-study"><br/>
+    <!-- <label class = "clear" onclick="clearAreaOfStudy()"> clear </label><br/><br/> -->
+    <label class="w3-text-teal" for="stuff">Did your degree lead to a significant improvement in your household income?</label><br/>
+    <select id="question" class="w3-input w3-border w3-light-grey">
+      <option></option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+  </form>
+  </div>
+
+<div style="text-align: center;">
+<button class="w3-btn w3-teal" onclick="submit()" id="submit" disabled="disabled">Submit</button><br/>
+<a style = "margin: auto;" href="./results.html" style="color: blue;">Results</a>
+</div>
+</body>
+</html>

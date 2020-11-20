@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<LINK REL=StyleSheet HREF="results.css" TYPE="text/css" MEDIA=screen>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="./results.js"></script>
+  <script src="https://d3js.org/d3.v4.js"></script>
+<br/>
+
+
+<div class="w3-card-4 center">
+    <div class="w3-container w3-teal">
+      <h2>Search Survey Results</h2>
+    </div>
+<form>
+  <label class = "w3-text-teal" for="fname">College</label><br/>
+  <input class="w3-input w3-border w3-light-grey" type="text" id="college" name="college"><br/><br/>
+  <label class = "w3-text-teal" for="lname">Area of study</label><br/>
+  <input class="w3-input w3-border w3-light-grey" type="text" id="area-of-study"><br/><br/>
+</form>
+</div>
+
+
+
+<div class="w3-border w3-light-grey" id="submit" onClick = "getData()">Submit</div>
+Percentage of persons that said "yes" to
+
+<div id="results"></div>
+
+<div id="my_dataviz"></div>
