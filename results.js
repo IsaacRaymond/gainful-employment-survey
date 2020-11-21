@@ -105,9 +105,13 @@ var pie = d3.pie()
   .value(function(d) {return d.value; })
 var data_ready = pie(d3.entries(data))
 
+var arcGenerator = d3.arc()
+  .innerRadius(0)
+  .outerRadius(radius)
+
 // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
 svg
-  .selectAll('whatever')
+  .selectAll('mySlices')
   .data(data_ready)
   .enter()
   .append('path')
@@ -119,4 +123,14 @@ svg
   .attr("stroke", "black")
   .style("stroke-width", "2px")
   .style("opacity", 0.7)
+
+  svg
+  .selectAll('mySlices')
+  .data(data_ready)
+  .enter()
+  .append('text')
+  .text(function(d){ return "grp " + d.data.key})
+  .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
+  .style("text-anchor", "middle")
+  .style("font-size", 17)
 }
