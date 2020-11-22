@@ -98,7 +98,6 @@ function statusChangeCallback(response) {
 function logout(){
   FB.getLoginStatus(function(response) {
     FB.logout(function(response){
-      console.log("Logged Out!");
       window.location = "/";
     });
   });
@@ -128,7 +127,6 @@ function submit(){
 
 function getId(){
   $.get('/setFacebookId',{}).done(function(response){
-    console.log('response.facebookId is '+ response.facebookId);
     return response.facebookId;
   });
 }

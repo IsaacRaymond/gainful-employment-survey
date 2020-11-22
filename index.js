@@ -5,6 +5,7 @@ const path = require("path");
 const mongoSubmit = require("./server/mongoSubmit");
 const mongoData = require("./server/mongoData");
 const mongoDataNoMajor = require("./server/mongoDataNoMajor");
+const mongoDelete = require("./server/mongoDelete");
 
 let facebookId;
 
@@ -16,12 +17,10 @@ app.get('/', function(req, res){
 });
 
 app.post('/setFacebookId', function(req, res){
-  console.log('setFacebookId happened.  ' + req.body.facebookId);
   facebookId = req.body.facebookId;
 });
 
 app.get('/setFacebookId', function(req, res){
-  console.log('get setFacebookId happened.  '+facebookId);
   res.send(facebookId);
 });
 
@@ -35,6 +34,10 @@ app.post('/data', function(req, res){
 
 app.post('/dataNoMajor', function(req, res){
   mongoDataNoMajor(req.body.college, res);
+})
+
+app.post('/deleteData', function(req, res){
+  mongoDelete(facebookId, res);
 })
 
 app.listen(process.env.PORT || 3000, () => console.log('Example app listening on port 3000!'));

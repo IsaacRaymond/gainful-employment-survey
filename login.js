@@ -57,7 +57,6 @@ function statusChangeCallback(response) {
 function logout(){
   FB.getLoginStatus(function(response) {
     FB.logout(function(response){
-      console.log("Logged Out!");
       window.location = "/";
     });
   });

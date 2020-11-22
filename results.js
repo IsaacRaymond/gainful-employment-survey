@@ -56,8 +56,10 @@ function getData(){
     }).done(function( data ){
       if(data.total <2){
         $("#results").html("The survey has not received enough responses for this school");
+        graphing(0, 0);
+      } else {
+        graphing(data.yes, data.total);
       }
-      graphing(data.yes, data.total);
     });
   } else if (college && areaOfStudy){
     $.post('/data',
@@ -67,8 +69,10 @@ function getData(){
     }).done(function( data ){
       if(data.total <2){
         $("#results").html("The survey has not received enough responses for this school from this major");
+        graphing(0, 0);
+      } else{
+        graphing(data.yes, data.total);
       }
-      graphing(data.yes, data.total);
     });
   }
 }
@@ -93,7 +97,7 @@ var svg = d3.select("#my_dataviz")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
 // Create dummy data
-var data = {a: yes, b: total}
+var data = {yes: yes, no: (total-yes)}
 
 // set the color scale
 var color = d3.scaleOrdinal()
@@ -129,7 +133,9 @@ svg
   .data(data_ready)
   .enter()
   .append('text')
-  .text(function(d){ return "grp " + d.data.key})
+  .text(function(d){
+    return d.data.key + "("+(d.data.value/total*100)+"%)"
+  })
   .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
   .style("text-anchor", "middle")
   .style("font-size", 17)
