@@ -119,6 +119,7 @@ function submit(){
       if( alreadyAnswered ){
         window.location.href ="./repeat.html"
       } else {
+        alert('Thank you for your submission.');
         window.location.href ="./results.html"
       }
     });
