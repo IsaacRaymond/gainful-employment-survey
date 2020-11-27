@@ -24,7 +24,9 @@ window.fbAsyncInit = function() {
 }(document, 'script', 'facebook-jssdk'));
 
 function checkLoginState() {
+  console.log('checkLoginState()');
   FB.getLoginStatus(function(response) {
+    console.log('getLoginStatus response is ' + response);
     statusChangeCallback(response);
   });
 }
@@ -34,6 +36,7 @@ function checkLoginState() {
 //It is hiddin in a private server, unattached to the user's college submission
 //to make sure people are not submitting more than one response.
 function statusChangeCallback(response) {
+  console.log('statusChangeCallback is ' + response);
   if (response.status === 'connected') {
     FB.api('/me', function (response) {
       window.location.href = "/login.html";
