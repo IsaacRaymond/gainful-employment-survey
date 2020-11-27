@@ -47,7 +47,7 @@ function statusChangeCallback(response) {
   } else {
     // The person is not logged into your app or we are unable to tell.
     document.getElementById('status').innerHTML = 'Please log ' +
-    'into this app.';
+    'into this app. <br/> <div class="fb-login-button" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="true" data-width="" scope="" onlogin="checkLoginState()"</div>' ;
   }
 }
 
