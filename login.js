@@ -1,6 +1,3 @@
-let facebookId;
-
-
 $(document).ready(function() {
 
 });
