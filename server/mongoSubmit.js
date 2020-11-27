@@ -26,7 +26,9 @@ function mongoDbConnect(respondentId, college, areaOfStudy, question, res){
         res.send(true);
       } else {
         resultsCollection.insertOne(responseData, (error, result) =>{
-          if(error){}
+          if(error){
+            alert("An error has occurred");
+          }
         });
         res.send(false);
       }
